@@ -1,0 +1,13 @@
+#+title: cs-quantum-espresso
+
+Trying to build QE for codespaces
+
+In a terminal you can run
+
+#+begin_src shell
+pw.x < H2.scf.inp > H2.scf.out
+#+end_src
+
+* Visualization 
+
+There is a way to visualize atoms. You can go to the ports tab in the terminal, and open port 6080 in a browser. You connect to the novnc as vscode, and then gui apps will appear in your browser.

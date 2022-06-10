@@ -24,7 +24,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN mkdir -p /usr/share/espresso/pseudo \
      && wget https://www.dropbox.com/s/4dh029vm3bl2kc1/SSSP_1.1.2_PBE_precision.tar.gz?dl=0 -O SSSP.tar.gz\
      && tar xf SSSP.tar.gz -C /usr/share/espresso/pseudo \
-     && rm SSSP.tar.gz
+     && rm SSSP.tar.gz \
+     && pip install ase
 
 RUN pwd && ls
 COPY .devcontainer/library-scripts/desktop-lite-debian.sh /tmp/library-scripts/
@@ -38,5 +39,6 @@ ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
     DISPLAY=":1" \
     LANG="en_US.UTF-8" \
     LANGUAGE="en_US.UTF-8"
+
 ENTRYPOINT ["/usr/local/share/desktop-init.sh"]
 CMD ["sleep", "infinity"]
